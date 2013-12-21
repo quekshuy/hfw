@@ -1,0 +1,25 @@
+{
+  "name": "hfw",
+  "version": "0.0.0",
+  "description": "hfw ===",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/quekshuy/hfw.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/quekshuy/hfw/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-s3": "~0.2.0-alpha.3",
+    "grunt-init": "~0.2.1",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
