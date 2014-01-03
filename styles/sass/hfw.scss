@@ -1,9 +1,18 @@
+@import "_clock.scss";
+
 body { 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+button.btn-default.active { 
+    background-color: #ebebeb;
+    color: #333;
+}
+
 .date-container { 
-    margin: 12.5% auto 0 auto;
+
+    width: 50%;
+    margin: 15.5% auto 0 auto;
     /*text-align: center;*/
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 7.8em;
@@ -12,16 +21,112 @@ body {
         font-size: 12.5em;
     }
 
-    .month { 
-        font-size: 7em;
+    .month, .day, .sep { 
+        font-size: 2em;
         font-weight: 500;
     }
     
-
-    .year { 
+    span.year { 
         font-size: 2.75em;
-        margin-top: -1em;
         letter-spacing: 0.75em;
-        margin-left: 0.1em;
+    }
+
+    div.year { 
+        margin-top: -4.5em;
     }
 }
+
+.clock-container { 
+    margin-top: 12.5%;
+}
+
+.padleft-135 { 
+    padding-left: 13.5%;
+}
+
+.text-centered { 
+    text-align: center;
+}
+
+.gray-txt { 
+    color: #888;
+}
+
+.pull-down-30p { 
+    margin-top: 30px;
+}
+
+.deep-bg { 
+    background-color: #1d1d27;
+}
+
+.deep-green-bg {
+    background-color: #1D5A22;
+}
+
+.white-txt { 
+    color: #fff;
+}
+
+.arrow_box {
+	position: relative;
+	background: #ffffff;
+	border: 1px solid #a8a8a8;
+}
+
+.arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #ffffff;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.arrow_box:before {
+	border-color: rgba(168, 168, 168, 0);
+	border-bottom-color: #a8a8a8;
+	border-width: 31px;
+	margin-left: -31px;
+}
+
+.choosers-panel { 
+    padding: 15px;
+}
+
+.content { 
+    font-size: 1.5em;
+}
+
+.load-status-indicator { 
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+@-webkit-keyframes thehour {
+  from {-webkit-transform: rotate(0deg)}
+  to {-webkit-transform: rotate(360deg)}
+}
+@-webkit-keyframes theminute {
+    from {-webkit-transform: rotate(0deg)}
+    to {-webkit-transform: rotate(360deg)}
+}
+@-webkit-keyframes thesecond {
+    from {-webkit-transform: rotate(0deg)}
+    to {-webkit-transform: rotate(360deg)}
+}
+
+.status-bar { 
+    position: fixed;
+    bottom: 0;
+}
+

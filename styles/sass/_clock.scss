@@ -1,0 +1,96 @@
+.clock-container {
+    .clock {
+      margin: 35px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      box-shadow: 
+        0 0 0 15px white,
+        0 4px 15px 10px rgba(0,0,0,.6),
+        0 5px 10px rgba(0,0,0,.3) inset;
+      background:
+        radial-gradient(transparent 125px, #eee 125px),
+        radial-gradient(#eee 110px, transparent 110px),
+        linear-gradient(90deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(120deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(150deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(180deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(210deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(240deg, transparent 49.5%, black 50%, transparent 50%), 
+        radial-gradient(#eee 120px, transparent 120px),
+        linear-gradient(264deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(258deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(252deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(246deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(234deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(228deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(222deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(216deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(204deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(198deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(192deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(186deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(174deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(168deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(162deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(156deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(144deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(138deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(132deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(126deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(114deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(108deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(102deg, transparent 49.5%, black 50%, transparent 50%),
+        linear-gradient(96deg, transparent 49.5%, black 50%, transparent 50%),
+        #eee;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+    }
+    .hands {
+      width: 100%;
+      height: 100%;
+      -webkit-filter: drop-shadow(0 6px 3px rgba(0,0,0,.4));
+    }
+
+
+    .hand {
+      width: 5px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -100px 0 0 -2.5px;
+      background: black;
+      transform-origin: 50% 100%;
+    }
+    .hour { 
+      height: 75px;
+      margin: -75px 0 0 -5px;
+      width: 10px;
+      animation: thehour 43200s linear infinite; 
+    }
+    .minute { 
+      animation: theminute 3600s linear infinite; 
+    }
+    .seconds { 
+      width: 2px;
+      background-color: red;
+      animation: thesecond 60s linear infinite; 
+      height: 150px;
+      margin-left: -1px;
+      transform-origin: 50% 100px;
+    }
+    .seconds:after {
+      content: '';
+      position: absolute;
+      bottom: 35px;
+      left: -14px;
+      width: 30px;
+      height: 30px;
+      background: red;
+      border-radius: 50%;
+    }
+
+}
+

@@ -1,18 +1,157 @@
+.clock-container .clock {
+  margin: 35px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 15px white, 0 4px 15px 10px rgba(0, 0, 0, 0.6), 0 5px 10px rgba(0, 0, 0, 0.3) inset;
+  background: radial-gradient(transparent 125px, #eeeeee 125px), radial-gradient(#eeeeee 110px, transparent 110px), linear-gradient(90deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(120deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(150deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(180deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(210deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(240deg, transparent 49.5%, black 50%, transparent 50%), radial-gradient(#eeeeee 120px, transparent 120px), linear-gradient(264deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(258deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(252deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(246deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(234deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(228deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(222deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(216deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(204deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(198deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(192deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(186deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(174deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(168deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(162deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(156deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(144deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(138deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(132deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(126deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(114deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(108deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(102deg, transparent 49.5%, black 50%, transparent 50%), linear-gradient(96deg, transparent 49.5%, black 50%, transparent 50%), #eeeeee;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative; }
+.clock-container .hands {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: drop-shadow(0 6px 3px rgba(0, 0, 0, 0.4)); }
+.clock-container .hand {
+  width: 5px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -100px 0 0 -2.5px;
+  background: black;
+  transform-origin: 50% 100%; }
+.clock-container .hour {
+  height: 75px;
+  margin: -75px 0 0 -5px;
+  width: 10px;
+  animation: thehour 43200s linear infinite; }
+.clock-container .minute {
+  animation: theminute 3600s linear infinite; }
+.clock-container .seconds {
+  width: 2px;
+  background-color: red;
+  animation: thesecond 60s linear infinite;
+  height: 150px;
+  margin-left: -1px;
+  transform-origin: 50% 100px; }
+.clock-container .seconds:after {
+  content: '';
+  position: absolute;
+  bottom: 35px;
+  left: -14px;
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 50%; }
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+button.btn-default.active {
+  background-color: #ebebeb;
+  color: #333; }
+
 .date-container {
-  margin: 12.5% auto 0 auto;
+  width: 50%;
+  margin: 15.5% auto 0 auto;
   /*text-align: center;*/
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 7.8em; }
   .date-container .date {
     font-size: 12.5em; }
-  .date-container .month {
-    font-size: 7em;
+  .date-container .month, .date-container .day, .date-container .sep {
+    font-size: 2em;
     font-weight: 500; }
-  .date-container .year {
+  .date-container span.year {
     font-size: 2.75em;
-    margin-top: -1em;
-    letter-spacing: 0.75em;
-    margin-left: 0.1em; }
+    letter-spacing: 0.75em; }
+  .date-container div.year {
+    margin-top: -4.5em; }
+
+.clock-container {
+  margin-top: 12.5%; }
+
+.padleft-135 {
+  padding-left: 13.5%; }
+
+.text-centered {
+  text-align: center; }
+
+.gray-txt {
+  color: #888; }
+
+.pull-down-30p {
+  margin-top: 30px; }
+
+.deep-bg {
+  background-color: #1d1d27; }
+
+.deep-green-bg {
+  background-color: #1D5A22; }
+
+.white-txt {
+  color: #fff; }
+
+.arrow_box {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #a8a8a8; }
+
+.arrow_box:after, .arrow_box:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none; }
+
+.arrow_box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #ffffff;
+  border-width: 30px;
+  margin-left: -30px; }
+
+.arrow_box:before {
+  border-color: rgba(168, 168, 168, 0);
+  border-bottom-color: #a8a8a8;
+  border-width: 31px;
+  margin-left: -31px; }
+
+.choosers-panel {
+  padding: 15px; }
+
+.content {
+  font-size: 1.5em; }
+
+.load-status-indicator {
+  position: absolute;
+  right: 5px;
+  top: 5px; }
+
+@-webkit-keyframes thehour {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@-webkit-keyframes theminute {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@-webkit-keyframes thesecond {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+.status-bar {
+  position: fixed;
+  bottom: 0; }

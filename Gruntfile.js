@@ -39,8 +39,12 @@ module.exports = function(grunt) {
                     dest: 'styles/'
                 },
                 {
-                    src: 'lib/flipclock/*.js',
-                    dest: 'js/flipclock/'
+                    src: 'lib/*.js',
+                    dest: 'js/'
+                },
+                {
+                    src: 'data/*.json',
+                    dest: 'data/'
                 }
             ]
         }
@@ -109,7 +113,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:lib_test', 'qunit']
       },
       sass: { 
-        files: ['styles/sass/*.scss', 'pages/index.html', 'src/*.js'],
+        files: ['styles/sass/*.scss', 'pages/index.html', 'src/*.js', 'data/*.json'],
         tasks: ['sass:dist', 's3']
       }
     }

@@ -1,52 +1,102 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Flipclock Demo</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.0.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/flipclock.css">
+  <title>&#x6709;&#x6728;&#x6709;&#x65F6;&#x5149;&#x5012;&#x6D41;&#x673A;</title>
+ <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.0.3/css/bootstrap.min.css">
+ <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/animate.min.css">
+  <link rel="stylesheet" href="/styles/bootstrap-formhelpers.min.css">
   <link rel="stylesheet" href="/styles/hfw.css">
+  <!-- to get the clock working -->
+  <script src="/js/prefixfree.min.js"></script>
+  <script src="/js/modernizr.js"></script>
+  <!-- /to get the clock working -->
 </head>
 <body>
-  <!-- This is a very basic demo of FlipClock. -->
-  <!--
-  <div id="container">
-    <div id="content">
-      <div id="clock"></div>
-    </div>
-  </div>
-  -->
+  <div class="load-status-indicator hide"><i class="fa fa-spinner fa-spin"></i></div>
   <div class="container" style="">
       <div class="row">
           <div class="col-xs-6">
               <div class="date-container">
                   <div class="row">
-                      <div class="col-xs-12 date">21</div>
+                      <div class="col-xs-12"><span class="date"></span></div>
                   </div>
                   <div class="row">
-                      <div class="col-xs-12 month">Dec</div>
+                      <div class="col-xs-12 padleft-135"><span class="day"></span> <span class="sep">/</span> <span class="month"></span></div>
                   </div>
-                  <div class="row">
-                      <div class="col-xs-12 year">2013</div>
+                  <div class="row pull-up">
+                      <div class="col-xs-12 year"><span class="year"></span></div>
                   </div>
               </div>
           </div>
           <div class="col-xs-6">
-              Time
+              <div class="clock-container">
+                  <div class="clock">
+                      <div class="hands">
+                        <div class="hand hour"></div>
+                        <div class="hand minute"></div>
+                        <div class="hand seconds"></div>
+                      </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 text-centered">
+              <button type="button" id="chooser-init" class="btn btn-default btn-lg gray-txt">&#x5F00;&#x59CB;</button>
+              <button type="button" id="time-continue" class="btn btn-default btn-lg gray-txt hide">&#x8DD1;&#x5427;&#xFF0C;&#x65F6;&#x949F;</button>              
+              <!--<div class="row">-->
+                  <!--<div class="col-xs-12">-->
+                    <!--</div>-->
+              <!--</div>-->
+              <div class="row hide" id="chooser-row">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4 text-centered">
+                    <div id="choosers-container" class="pull-down-30p">
+                        <div class="choosers-panel arrow_box clearfix">
+                            <!--<div class="gray-txt">&#x56DE;&#x5230;</div>-->
+                            <div class="bfh-datepicker" data-format="d-m-y"></div>
+                            <div class="bfh-timepicker"></div>
+                            <div class="status hide"><i class="fa fa-spinner fa-spin"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4"></div>
+              </div>
+          </div>
+      </div>
+      <!-- nothing found -->
+      <div class="row status pull-down-30p hide" id="not-found">
+          <div class="col-xs-12">
+              <h1 class="well well-lg deep-bg white-txt text-centered">&#x6CA1;&#x6709;!</h1>
+          </div>
+      </div>
+      <!-- /nothing found -->
+      <div class="row pull-down-30p hide" id="found">
+          <div class="col-xs-12">
+              <h1 class="well well-lg text-centered deep-green-bg white-txt"><span id="ymy-prefix"></span> &#x6709;&#x6728;&#x6709;!</h1>
+              <div class="row pull-down-30p">
+                  <div class="col-xs-1"></div>
+                  <div class="col-xs-10 content"></div>
+                  <div class="col-xs-1"></div>
+              </div>
           </div>
       </div>
   </div>
+  <!-- /container -->
+  <div class="container status-bar">
+      <div class="row">
+          <div class="col-xs-12">
+              <span class="label label-info">&#x5269;&#x4F59; <span class="badge" id="num-remaining">0</span></span>
+              <span class="label label-success">&#x5DF2;&#x9605;&#x8BFB; <span class="badge" id="num-read">0</span></span>
+          </div>
+      </div>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jStorage/0.4.4/jstorage.min.js"></script>
   <script src="//cdn.jsdelivr.net/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-  <script src="/js/flipclock/flipclock.min.js"></script>
-  <script>
-/*
-  var clock;
-  $().ready(function(){
-    clock = $('#clock').FlipClock({
-      clockFace: 'TwentyFourHourClock'
-    });
-  });
-  */
-  </script>
+  <script src="/js/bootstrap-formhelpers.min.js"></script>
+  <script src="/js/index.js"></script>
 </body>
 </html>
